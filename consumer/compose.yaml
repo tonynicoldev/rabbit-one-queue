@@ -7,8 +7,8 @@ services:
     pull_policy: always
     restart: unless-stopped
     environment:
-    #- RMQ_HOST=rabbitmq # Use this if joining networks
+    - RMQ_HOST=rabbitmq # Use this if joining networks
     #- RMQ_HOST=host.docker.internal # use this if not joining networks
-    - RMQ_HOST=10.0.1.10  # Needs to be private IP of the producer if on VMs
+    # - RMQ_HOST=10.0.1.10  # Needs to be private IP of the producer if on VMs
     ports:
     - 4001:3001
