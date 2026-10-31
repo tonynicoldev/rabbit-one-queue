@@ -93,7 +93,7 @@ async function getMessageFromQueue(channel, queue) {
     if (message) {
       console.log('Received message:', message.content.toString());
       let msg = JSON.parse(message.content.toString());
-      channel.ack(message) // Ack message so it will be removed from the queue. Put this somewhere else to ack when msg is processed
+      channel.ack(message); // Ack message so it will be removed from the queue. Put this somewhere else to ack when msg is processed
       return (msg);
     } else {
       console.log('No messages in the queue');

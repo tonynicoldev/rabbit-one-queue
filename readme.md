@@ -3,6 +3,8 @@ This demo creates a producer and consumer application and starts an MQ message b
 
 Messages created by the producer are sent to the queue on the broker and the consumer reads and removes the messages
 
+
+
 There are three build approaches: 
 1. Run in vscode to debug using the provided launch.json
 2. Build and run the demo in local containers to test them
@@ -42,6 +44,10 @@ To test this endpoint to get a single message from the queue, you need to edit t
 to stop the callback being started as it will consume all the messages before you get a chance to request one
 
 ## VScode
+**Architecture for this section**
+
+<img src="images/vscode-architecture.png" alt="Architecture when running vscode and rabbit container" width="300">
+
 Run in the debugger using the launch.json. This enables debugging of producer and consumer at the same time
 
 The application port numbers are 3000 for producer and 3001 for the consumer
@@ -55,6 +61,9 @@ You can monitor the queue by connecting to the administration console from the b
 The user name and password are both **admin**
 
 ## Containers
+**Architecture for this section**  
+<img src="images/local-containers-architecture.png" alt="Architecture when running vscode and rabbit container" width="300">
+
 Start Docker desktop
 
 From the producer dir, **docker compose up -d --build**  
@@ -72,6 +81,9 @@ You can monitor the queue by connecting to the administration console from the b
 The user name and password are both **admin**
 
 ## Cloud Deployment
+**Architecture for this section**  
+<img src="images/cloud-architecture.png" alt="Architecture when running vscode and rabbit container" width="600">
+
 Create two cloud VMs, one for the producer containers and one for the consumer
 
 **Note:** in Azure, if you're creating these from the portal, use the same resource group for both VMs or they will be placed in different networks and won't be able to communicate with each other
